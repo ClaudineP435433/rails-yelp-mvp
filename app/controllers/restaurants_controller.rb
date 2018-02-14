@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @reviews = @restaurant.reviews
+    @review = Review.new
   end
 
   def new
@@ -22,8 +23,6 @@ class RestaurantsController < ApplicationController
       render :new
     end
   end
-
-
 
   private
 

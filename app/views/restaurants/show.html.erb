@@ -14,7 +14,6 @@
 <hr>
 
 <h3>⭐️  Reviews ⭐️</h3>
-<p><%= link_to "Add a review", new_restaurant_review_path(@restaurant)%></p>
 
 <div class="review-show">
   <ul>
@@ -22,5 +21,13 @@
       <li><%= "⭐️" * review.rating %><%= review.content %></li>
     <% end %>
   </ul>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: [0,1,2,3,4,5], prompt: true%>
+    <%= f.button :submit, class: "btn btn-primary"%>
+  <% end %>
 </div>
 
