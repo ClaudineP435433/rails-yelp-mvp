@@ -1,5 +1,14 @@
 .resto {
   height: 200px;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 3px;
+
+  h3 {
+    padding: 5px;
+  }
+  p{
+    padding: 5px;
+  }
 }
 
 .resto_show {
