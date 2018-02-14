@@ -9,6 +9,11 @@ class ReviewsController < ApplicationController
   def show
   end
 
+  def new
+    @review = Review.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
+
   def create
     @review = Review.new(review_params)
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -19,6 +24,8 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
+
+
 
   private
 
